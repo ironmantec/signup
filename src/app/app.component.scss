@@ -1,0 +1,21 @@
+.navbar {
+    background-color: #1F63F1 !important;
+    a {
+        color: #eee !important;
+        &:hover {
+            color: #bcd !important;
+            text-decoration: none !important;
+        }
+    }
+    a.navbar-brand { 
+        color: #fff !important; 
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+}
+.footer {
+    padding: 15px;
+    background-color: #222;
+    color: #ddd;
+    font-size: .9em;
+}

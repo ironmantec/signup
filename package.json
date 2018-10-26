@@ -1,6 +1,6 @@
 {
-  "name": "timetable",
-  "version": "0.0.0",
+  "name": "easiest",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -20,7 +20,13 @@
     "@angular/platform-browser": "^6.0.2",
     "@angular/platform-browser-dynamic": "^6.0.2",
     "@angular/router": "^6.0.2",
+    "@ng-bootstrap/ng-bootstrap": "^2.0.0",
+    "bootstrap": "^4.1.1",
+    "chart.js": "^2.5.0",
     "core-js": "^2.5.4",
+    "font-awesome": "^4.7.0",
+    "hammerjs": "^2.0.8",
+    "jquery": "^3.3.1",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
