@@ -7,11 +7,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { UniqueEmailValidatorDirective } from './email-validator.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    UniqueEmailValidatorDirective
   ],
   imports: [
     BrowserModule,
