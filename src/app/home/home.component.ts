@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { CustomValidators } from '../customValdators';
+import { UserService } from '../user.service';
+import { uniqueEmailValidator } from '../email-validator.directive';
 
 @Component({
   selector: 'app-home',
@@ -13,23 +16,15 @@ export class HomeComponent implements OnInit {
     success = false;
     person = { first: '', last: '', phone: '', email: ''};
 
-    constructor(private formBuilder: FormBuilder) { }
+    constructor(private formBuilder: FormBuilder, private userService: UserService) { }
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
-            phone: ['', Validators.required],
-            email: ['', [Validators.required, Validators.email, this.duplicateEmail]]
+            phone: ['', [ Validators.required, CustomValidators.invalidPhone ]],
+            email: ['', [ Validators.required, Validators.email ], uniqueEmailValidator(this.userService) ]
         });
-    }
-
-    private duplicateEmail(control: FormControl) {
-      const currentEmails = {'abc@signup.com': true, 'def@test.com': true, 'ghi@go.com': true };
-      if (currentEmails[control.value]) {
-          return { 'duplicateEmail': true };
-      }
-      return null;
     }
 
     // convenience getter for easy access to form fields
